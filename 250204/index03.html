@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./script03.js"></script>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      ul,
+      li {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #open {
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        padding: 4px 8px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        display: block;
+        &.btnActive {
+          display: none;
+        }
+      }
+
+      #modal-box {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.3);
+        #profile {
+          width: 360px;
+          padding: 20px 40px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: #fff;
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+          button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            border-radius: 4px;
+            padding: 4px 10px;
+            font-size: 14px;
+            cursor: pointer;
+          }
+          img {
+            width: 140px;
+            border-radius: 50%;
+          }
+          #desc {
+            ul {
+              li {
+                margin: 14px;
+              }
+            }
+          }
+        }
+        &.active {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- modal before -->
+    <button id="open">프로필보기</button>
+
+    <!-- modal after -->
+    <div id="modal-box">
+      <div id="profile">
+        <button id="close">닫기</button>
+        <img
+          src="https://herb-api.hankookilbo.com/api/attaches/image/group/b0a0d85f-dc61-4e39-b356-ea7389ab71d0"
+          alt="iu"
+        />
+        <div id="desc">
+          <ul>
+            <li><a href="#">이름 : 아이유</a></li>
+            <li><a href="#">직업 : 가수</a></li>
+            <li><a href="#">취미 : 노래</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
