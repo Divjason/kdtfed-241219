@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./script01.js"></script>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      ul,
+      li {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      body {
+        #container {
+          width: 1200px;
+          margin: 100px auto 0;
+          #heading {
+            display: flex;
+            gap: 20px;
+            img {
+              width: 200px;
+              border-radius: 8px;
+            }
+            .desc {
+              width: 70%;
+              h2 {
+                margin: 8px 0 20px;
+              }
+              p {
+                margin: 6px 0;
+                &:nth-of-type(2) {
+                  line-height: 140%;
+                }
+              }
+              #order {
+                border: none;
+                border-radius: 8px;
+                padding: 6px 10px;
+                font-size: 18px;
+                cursor: pointer;
+              }
+            }
+          }
+          #orderInfo {
+            margin-top: 50px;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="container">
+      <div id="heading">
+        <div class="img">
+          <img
+            src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b24c79dc-427b-4722-9e0c-2ca66c064ecf/G.T.+HUSTLE+3+EP+OLY.png"
+            alt="nike"
+          />
+        </div>
+        <div class="desc">
+          <h1>상품설명</h1>
+          <h2 id="title">
+            상품명 : 나이키 G.T. 허슬 3 EP 일렉트릭<span> [마감임박상품]</span>
+          </h2>
+          <p>
+            이중 스택 줌에어 유닛이 막강한 파워를 제공하고 통기성 좋은 갑피가
+            안정성과 시원함을 유지해줍니다.
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium
+            facere illo consequuntur assumenda aliquid minus amet. Doloribus,
+            velit sit quam accusamus commodi labore debitis molestias culpa
+            dolorum quia et praesentium asperiores sunt aperiam sapiente
+            voluptates. Est, fugiat iste. Enim veniam expedita consequuntur
+            voluptate quo modi voluptates porro aspernatur, aperiam rem!
+          </p>
+          <button id="order">상품주문하기</button>
+        </div>
+      </div>
+      <div id="orderInfo">주문내역</div>
+    </main>
+  </body>
+</html>

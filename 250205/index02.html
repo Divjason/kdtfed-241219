@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script02.js"></script>
+    <title>Book List</title>
+  </head>
+  <body>
+    <main id="container">
+      <h1>Book List</h1>
+      <form name="book-list">
+        <ul id="bookInfo">
+          <li>
+            <label for="title">제 목</label>
+            <input id="title" type="text" name="title" />
+          </li>
+          <li>
+            <label for="author">저 자</label>
+            <input id="author" type="text" name="author" />
+          </li>
+        </ul>
+        <input class="btn" type="submit" value="저장하기" />
+        <input class="btn" type="reset" value="취소하기" />
+      </form>
+      <ul id="booklist">
+        <!-- <li>자바스크립트의 정석 - 박세진 <span>삭제</span></li> -->
+      </ul>
+    </main>
+  </body>
+</html>
