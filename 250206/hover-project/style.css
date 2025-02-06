@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+#container .photo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("./img/portrait-initial.jpg") center/cover no-repeat;
+}
+#container .navi a {
+  font-size: 4rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+#container .navi a::before {
+  content: attr(data-text);
+  color: #9acd32;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 0;
+  transition: all 0.3s;
+}
+#container .navi a:hover::before {
+  width: 100%;
+}

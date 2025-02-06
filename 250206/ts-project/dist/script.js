@@ -1,0 +1,17 @@
+// let numA: 100 = 100;
+// let strA = "Hello";
+const numArr = [1, 2, 3];
+const strArr = ["Hello", "World"];
+let boolArr01 = [true, false, true];
+boolArr01 = [true, true];
+const boolArr02 = [true, false, true];
+const muliArr = [1, "hello"];
+const doubleArr = [[1, "2", 3], [4, 5], [6]];
+const tup1 = [1, 2];
+// tup1 = [1, 2, 3];
+let tup2 = [1, "Hello", true];
+// tup2 = [1, 2];
+let tup3 = [1, 2];
+tup3.push(1);
+console.log(tup3);
+export {};
