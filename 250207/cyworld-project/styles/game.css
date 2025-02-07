@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* mixin */
+/* common */
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+html body {
+  font-size: 1.6rem;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#wrapper #wrapper-header {
+  width: 100%;
+  height: 48px;
+}
+#wrapper #wrapper-header .contents-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#wrapper #wrapper-header .contents-title .title {
+  color: #55b2e4;
+  font: bold 1.4rem/1 "arial";
+}
+#wrapper #wrapper-header .contents-title .subtitle {
+  font: normal 1.4rem/1 "arial";
+}
+#wrapper #wrapper-header .header-line {
+  width: 100%;
+  border-top: 1px solid #808080;
+  margin: 4px 0;
+}
+#wrapper > section:nth-child(2) {
+  background: url("../contents/bg_1.jpg") center -90px/cover no-repeat;
+  width: 100%;
+  height: 158px;
+  border: 1px solid #808080;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+  box-shadow: 0 0 8px #808080;
+  overflow: hidden;
+  position: relative;
+}
+#wrapper > section:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+#wrapper > section:nth-child(2) img {
+  position: relative;
+}
+#wrapper > section:nth-child(2) .game-title,
+#wrapper > section:nth-child(2) .game-subtitle {
+  position: relative;
+  color: #fff;
+}
+#wrapper > section:nth-child(2) .game-title {
+  font: normal 1.6rem/1 "arial";
+}
+#wrapper > section:nth-child(2) .game-subtitle {
+  font: normal 1.4rem/1 "arial";
+}
+#wrapper > section:nth-child(2) .word-text {
+  position: relative;
+}
+#wrapper > section:nth-child(2) .word-text input[type=text] {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: transparent;
+  color: #fff;
+  padding: 0 0 2px 8px;
+}
+#wrapper > section:nth-child(2) .word-text input[type=text]::-moz-placeholder {
+  opacity: 1;
+  color: #fff;
+  -moz-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+#wrapper > section:nth-child(2) .word-text input[type=text]::placeholder {
+  opacity: 1;
+  color: #fff;
+  transition: opacity 0.3s;
+}
+#wrapper > section:nth-child(2) .word-text input[type=text]:focus {
+  outline: none;
+}
+#wrapper > section:nth-child(2) .word-text input[type=text]:focus::-moz-placeholder {
+  opacity: 0;
+}
+#wrapper > section:nth-child(2) .word-text input[type=text]:focus::placeholder {
+  opacity: 0;
+}
+#wrapper > section:nth-child(2) .word-text input[type=submit] {
+  border: none;
+  border-radius: 8px;
+  padding: 2px 8px;
+  background: #f6f6f6;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#wrapper > section:nth-child(2) .word-text input[type=submit]:hover {
+  background: #dc143c;
+  color: #fff;
+}
+#wrapper > section:nth-child(2) .word-result {
+  position: relative;
+  color: #ff0;
+}
+#wrapper > section:nth-child(3) {
+  background: url("../contents/bg_2.jpg") center -90px/cover no-repeat;
+  width: 100%;
+  height: 158px;
+  border: 1px solid #808080;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+  box-shadow: 0 0 8px #808080;
+  overflow: hidden;
+  position: relative;
+}
+#wrapper > section:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+#wrapper > section:nth-child(3) img {
+  position: relative;
+}
+#wrapper > section:nth-child(3) .game-title,
+#wrapper > section:nth-child(3) .game-subtitle {
+  position: relative;
+  color: #fff;
+}
+#wrapper > section:nth-child(3) .game-title {
+  font: normal 1.6rem/1 "arial";
+}
+#wrapper > section:nth-child(3) .game-subtitle {
+  font: normal 1.4rem/1 "arial";
+}
+#wrapper > section:nth-child(3) .game-lotto-number {
+  position: relative;
+  background: #ff0;
+  margin: 5px 0;
+  padding: 4px 14px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+}
+#wrapper > section:nth-child(3) .game-lotto-number span {
+  color: #dc143c;
+}
+#wrapper > section:nth-child(3) .lotto-btn {
+  position: relative;
+  border: none;
+  border-radius: 8px;
+  padding: 2px 8px;
+  background: #f6f6f6;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#wrapper > section:nth-child(3) .lotto-btn:hover {
+  background: #dc143c;
+  color: #fff;
+}

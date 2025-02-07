@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/3f2ea24883.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom css & js -->
+    <link rel="stylesheet" href="./styles/jukebox.css" />
+    <script defer src="./scripts/jukebox.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="wrapper">
+      <section id="wrapper-header">
+        <div class="contents-title">
+          <div class="title">추억의 BGM</div>
+          <div class="subtitle">TODAY CHOICE</div>
+        </div>
+        <div class="header-line"></div>
+        <div class="albumWrapper">
+          <div class="albumWrapper-item">
+            <img
+              class="album-thumbnail"
+              src="./contents/jukebox-01.png"
+              alt="juke01"
+            />
+            <div class="album-songtitle">Y(Please Tell Me Why)</div>
+            <div class="album-artist">프리스타일</div>
+          </div>
+          <div class="albumWrapper-item">
+            <img
+              class="album-thumbnail"
+              src="./contents/jukebox-02.png"
+              alt="juke02"
+            />
+            <div class="album-songtitle">눈의꽃</div>
+            <div class="album-artist">박효신</div>
+          </div>
+          <div class="albumWrapper-item">
+            <img
+              class="album-thumbnail"
+              src="./contents/jukebox-03.png"
+              alt="juke03"
+            />
+            <div class="album-songtitle">사랑했나봐</div>
+            <div class="album-artist">윤도현</div>
+          </div>
+        </div>
+      </section>
+      <section id="wrapper-body">
+        <div class="contents-title">
+          <div class="title">BGM PlayList</div>
+          <div class="subtitle">오늘 추천곡</div>
+        </div>
+        <table class="albumTable">
+          <tr>
+            <th class="albumTable-checkbox">
+              <input id="total" type="checkbox" name="total" />
+            </th>
+            <th class="albumTable-number">번호</th>
+            <th class="albumTable-cover">곡명</th>
+            <th class="albumTable-artist">아티스트</th>
+          </tr>
+          <tr>
+            <td class="albumTable-checkbox">
+              <input id="check01" type="checkbox" name="check01" />
+            </td>
+            <td class="albumTable-number">1</td>
+            <td class="albumTable-song">
+              <i class="fas fa-caret-right"></i>
+              <i class="fas fa-pause"></i>
+              <span>눈의꽃</span>
+              <audio src="./contents/flower.mp4"></audio>
+            </td>
+            <td class="albumTable-artist">박효신</td>
+          </tr>
+          <tr>
+            <td class="albumTable-checkbox">
+              <input id="check02" type="checkbox" name="check02" />
+            </td>
+            <td class="albumTable-number">2</td>
+            <td class="albumTable-song">
+              <i class="fas fa-caret-right"></i>
+              <i class="fas fa-pause"></i>
+              <span>사랑스러워</span>
+              <audio src="./contents/love.mp4"></audio>
+            </td>
+            <td class="albumTable-artist">김종국</td>
+          </tr>
+          <tr>
+            <td class="albumTable-checkbox">
+              <input id="check03" type="checkbox" name="check03" />
+            </td>
+            <td class="albumTable-number">3</td>
+            <td class="albumTable-song">
+              <i class="fas fa-caret-right"></i>
+              <i class="fas fa-pause"></i>
+              <span>내 사람</span>
+              <audio src="./contents/sgwannabe.mp4"></audio>
+            </td>
+            <td class="albumTable-artist">SG워너비</td>
+          </tr>
+          <tr>
+            <td class="albumTable-checkbox">
+              <input id="check04" type="checkbox" name="check04" />
+            </td>
+            <td class="albumTable-number">4</td>
+            <td class="albumTable-song">
+              <i class="fas fa-caret-right"></i>
+              <i class="fas fa-pause"></i>
+              <span>Love Love Love</span>
+              <audio src="./contents/lovelovelove.mp4"></audio>
+            </td>
+            <td class="albumTable-artist">에픽하이</td>
+          </tr>
+          <tr>
+            <td class="albumTable-checkbox">
+              <input id="check05" type="checkbox" name="check05" />
+            </td>
+            <td class="albumTable-number">5</td>
+            <td class="albumTable-song">
+              <i class="fas fa-caret-right"></i>
+              <i class="fas fa-pause"></i>
+              <span>애인... 있어요</span>
+              <audio src="./contents/friend.mp4"></audio>
+            </td>
+            <td class="albumTable-artist">이은미</td>
+          </tr>
+        </table>
+        <div class="albumTable-footer">
+          <div class="footer-left">
+            <button>듣기</button>
+          </div>
+          <div class="footer-center">| <span>1</span> |</div>
+          <div class="footer-right">
+            <button>이동</button>
+            <button>배경음악 등록</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/3f2ea24883.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom css & js -->
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <title>기분좋은친구, cyworld</title>
+  </head>
+  <body>
+    <main id="container">
+      <div id="outer">
+        <div id="inner">
+          <section id="inner-left">
+            <div class="inner-left-header">
+              <div class="today">
+                <span>TODAY</span>
+                <span class="zero">0</span>
+                <span>| TOTAL</span>
+                <span class="total">1234</span>
+              </div>
+            </div>
+            <div class="inner-left-body">
+              <div class="left-body-title">
+                <div class="title-img"></div>
+                <div class="title-line"></div>
+              </div>
+              <div class="left-body-profile">
+                <div class="profile-detail">
+                  <i class="fas fa-user-astronaut"></i>
+                  <span>name</span>
+                </div>
+                <div class="profile-detail">
+                  <i class="fas fa-phone-volume"></i>
+                  <span>Tel</span>
+                </div>
+                <div class="profile-detail">
+                  <i class="fas fa-at"></i>
+                  <span>email</span>
+                </div>
+                <div class="profile-detail">
+                  <i class="fab fa-instagram"></i>
+                  <span>instagram</span>
+                </div>
+              </div>
+              <div class="left-body-footer">
+                <div class="footer-feel">
+                  <div class="feel-title">오늘의 기분👀</div>
+                  <form name="feel-list" action="#" method="post">
+                    <select name="emotion" id="emotion">
+                      <option disabled selected>기분을 선택하세요</option>
+                      <option value="happy">너무 행복한 날! 😍</option>
+                      <option value="sad">살짝 우울모드 충만 😭</option>
+                      <option value="angry">찐 앵그리버드 모드 😩</option>
+                      <option value="annoy">걸리면 죽는다 🤯</option>
+                    </select>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="inner-right">
+            <div class="inner-right-header">
+              <div class="header-title">사이좋은 사람들, 싸이월드</div>
+              <div class="header-privacy">
+                사생할보호설정<i class="fas fa-caret-right"></i>
+              </div>
+            </div>
+            <div class="inner-right-body">
+              <iframe id="contentFrame" src="./home.html"></iframe>
+            </div>
+          </section>
+          <section id="navigation">
+            <div id="menuHome" class="navigation-item">홈</div>
+            <div id="menuGame" class="navigation-item">게임</div>
+            <div id="menuJukebox" class="navigation-item">쥬크박스</div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

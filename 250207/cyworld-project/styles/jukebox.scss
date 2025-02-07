@@ -1,0 +1,134 @@
+@import "./reset.scss";
+@import "./variables.scss";
+
+/* mixin */
+@mixin innerContents {
+  .contents-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .title {
+      color: map-get($map: $color, $key: theme);
+      font: bold 1.4rem/1 "arial";
+    }
+    .subtitle {
+      font: normal 1.4rem/1 "arial";
+    }
+  }
+}
+
+/* common */
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  #wrapper-header {
+    width: 100%;
+    height: 48px;
+    @include innerContents;
+    .header-line {
+      width: 100%;
+      border-top: 1px solid map-get($map: $color, $key: gray);
+      margin: 4px 0;
+    }
+    .albumWrapper {
+      display: flex;
+      justify-content: space-between;
+      .album-thumbnail {
+        width: 130px;
+        height: 130px;
+      }
+      .album-songtitle {
+        font-size: 1.2rem;
+        color: map-get($map: $color, $key: gray);
+      }
+      .album-artist {
+        color: map-get($map: $color, $key: artist);
+        font-size: 1.4rem;
+      }
+    }
+  }
+  #wrapper-body {
+    width: 100%;
+    @include innerContents;
+    .albumTable {
+      width: 100%;
+      margin: 4px 0;
+      padding: 2px;
+      border-spacing: 0;
+      th {
+        background: map-get($map: $color, $key: table);
+        padding: 2px;
+        font-size: 1.4rem;
+      }
+      td {
+        color: map-get($map: $color, $key: artist);
+        border-bottom: 1px dashed map-get($map: $color, $key: gray);
+        height: 23px;
+        padding-top: 2px;
+      }
+      .albumTable-checkbox {
+        width: 5%;
+        text-align: center;
+      }
+      .albumTable-number {
+        width: 18%;
+        text-align: center;
+      }
+      .albumTable-song {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        gap: 6px;
+        padding-left: 40px;
+        i {
+          display: inline-block;
+          width: 24px;
+          height: 18px;
+          font-size: 1.4rem;
+          border-radius: 3px;
+          padding-left: 8px;
+          padding-top: 2px;
+          background: map-get($map: $color, $key: accent);
+          color: map-get($map: $color, $key: light);
+          cursor: pointer;
+        }
+      }
+      .albumTable-artist {
+        width: 26%;
+        text-align: center;
+      }
+    }
+    .albumTable-footer {
+      display: flex;
+      justify-content: space-between;
+      button {
+        background: map-get($map: $color, $key: gray);
+        color: map-get($map: $color, $key: light);
+        border: none;
+        border-radius: 6px;
+        padding: 3px 5px;
+        cursor: pointer;
+      }
+      .footer-center {
+        color: map-get($map: $color, $key: accent);
+      }
+    }
+  }
+}
