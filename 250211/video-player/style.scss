@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+$color: (
+  dark: #000,
+  light: #fff,
+  accent: #dc143c,
+);
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: map-get($map: $color, $key: dark);
+  color: map-get($map: $color, $key: light);
+}
+
+#music-player {
+  width: 80%;
+  max-width: 550px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  video {
+    width: 100%;
+  }
+  .controls {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: 0.6);
+    transform: translateY(100%) translateY(-6px);
+    transition: all 0.5s;
+    .progress {
+      width: 100%;
+      height: 6px;
+      background: rgba($color: #ffffff, $alpha: 0.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      .bar {
+        width: 0;
+        height: 100%;
+        background: map-get($map: $color, $key: accent);
+        position: relative;
+        .circle {
+          width: 16px;
+          height: 16px;
+          background: map-get($map: $color, $key: accent);
+          border-radius: 50%;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          opacity: 0;
+          transition: opacity 0.5s;
+          cursor: pointer;
+        }
+      }
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 0 10px;
+      .menu {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        button {
+          width: 40px;
+          height: 30px;
+          text-align: center;
+          padding-bottom: 2px;
+          border: none;
+          border-radius: 8px;
+          background: map-get($map: $color, $key: accent);
+          color: map-get($map: $color, $key: light);
+          cursor: pointer;
+        }
+        span {
+          font-size: 1.4rem;
+          cursor: pointer;
+        }
+        input[type="range"] {
+          width: 100px;
+          height: 6px;
+          border-radius: 8px;
+          background: map-get($map: $color, $key: light);
+          appearance: none;
+          -webkit-appearance: none;
+          &::-webkit-slider-thumb {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: map-get($map: $color, $key: accent);
+            appearance: none;
+            -webkit-appearance: none;
+          }
+        }
+        .time {
+          display: flex;
+          gap: 8px;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  &:hover .controls {
+    & {
+      transform: translateY(0);
+    }
+    & .progress .bar .circle {
+      opacity: 1;
+    }
+  }
+}

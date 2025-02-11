@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  color: #fff;
+}
+
+#music-player {
+  width: 80%;
+  max-width: 550px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+#music-player video {
+  width: 100%;
+}
+#music-player .controls {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  transform: translateY(100%) translateY(-6px);
+  transition: all 0.5s;
+}
+#music-player .controls .progress {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#music-player .controls .progress .bar {
+  width: 0;
+  height: 100%;
+  background: #dc143c;
+  position: relative;
+}
+#music-player .controls .progress .bar .circle {
+  width: 16px;
+  height: 16px;
+  background: #dc143c;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  cursor: pointer;
+}
+#music-player .controls .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+}
+#music-player .controls .buttons .menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#music-player .controls .buttons .menu button {
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  padding-bottom: 2px;
+  border: none;
+  border-radius: 8px;
+  background: #dc143c;
+  color: #fff;
+  cursor: pointer;
+}
+#music-player .controls .buttons .menu span {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+#music-player .controls .buttons .menu input[type=range] {
+  width: 100px;
+  height: 6px;
+  border-radius: 8px;
+  background: #fff;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+}
+#music-player .controls .buttons .menu input[type=range]::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #dc143c;
+  appearance: none;
+  -webkit-appearance: none;
+}
+#music-player .controls .buttons .menu .time {
+  display: flex;
+  gap: 8px;
+  font-size: 1.4rem;
+}
+#music-player:hover .controls {
+  transform: translateY(0);
+}
+#music-player:hover .controls .progress .bar .circle {
+  opacity: 1;
+}
