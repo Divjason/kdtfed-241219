@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+$font: (
+  jua: "Jua",
+);
+
+$color: (
+  light: #fff,
+  item: #ccc,
+  dark: #000,
+  accent: #222,
+  shadow: #333,
+  title: #666,
+  bg: #747474,
+);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: url("https://cdn.jbnews.com/news/photo/201709/811633_521867_4549.jpg")
+    center/cover no-repeat;
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  width: 450px;
+  border: 1px solid map-get($map: $color, $key: item);
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px map-get($map: $color, $key: shadow);
+  padding: 20px;
+  background: rgba($color: #ffffff, $alpha: 0.8);
+  .day1 {
+    text-align: center;
+    font-family: map-get($map: $font, $key: jua);
+    h3 {
+      font-size: 3.2rem;
+      color: map-get($map: $color, $key: title);
+    }
+    .accent {
+      margin-top: 6px;
+      span {
+        font-size: 4rem;
+        font-weight: bold;
+        color: map-get($map: $color, $key: accent);
+      }
+    }
+  }
+  .bar {
+    width: 100%;
+    height: 40px;
+    background: map-get($map: $color, $key: bg);
+    color: map-get($map: $color, $key: light);
+    margin: 20px 0;
+    text-align: center;
+    line-height: 40px;
+    font-size: 2rem;
+    border-radius: 8px;
+  }
+  .day2 {
+    width: 100%;
+    ul {
+      height: 60px;
+      border-bottom: 1px dashed map-get($map: $color, $key: item);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.8rem;
+      .item-title {
+        padding-left: 20px;
+      }
+      .item-date {
+        color: map-get($map: $color, $key: accent);
+        padding-right: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}
