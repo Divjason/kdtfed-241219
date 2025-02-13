@@ -1,0 +1,276 @@
+@font-face {
+  font-family: "youtube";
+  src: url("./fonts/AnyConv.com__KFOmCnqEu92Fr1Mu4mxPKTU1Kg.otf");
+}
+
+@mixin btnType {
+  display: inline-block;
+  font-size: 1.4rem;
+  background: map-get($map: $color, $key: background);
+  padding: 6px 18px;
+  border-radius: 20px;
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    background: map-get($map: $color, $key: accent);
+    color: map-get($map: $color, $key: light);
+  }
+}
+
+$color: (
+  dark: #000,
+  light: #fff,
+  background: #f0f0f0,
+  accent: #dc143c,
+  sub: #9f9f9f,
+  ad: #1a76f5,
+  ad-sub: #f1f8ff,
+);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  font-family: "youtube";
+}
+
+#container {
+  width: 360px;
+  height: 100%;
+  background: map-get($map: $color, $key: light);
+  position: relative;
+  header {
+    width: 360px;
+    position: fixed;
+    z-index: 10;
+    background: map-get($map: $color, $key: dark);
+    #header_contents {
+      width: 100%;
+      height: 55px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      img {
+        height: 22px;
+        cursor: pointer;
+      }
+      #header_right {
+        width: 54px;
+        display: flex;
+        justify-content: space-between;
+        i {
+          color: map-get($map: $color, $key: light);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  figure {
+    position: fixed;
+    top: 50px;
+    width: 360px;
+    height: 220px;
+    z-index: 10;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  & > div {
+    position: absolute;
+    top: 270px;
+    background: map-get($map: $color, $key: light);
+    width: 100%;
+    padding: 12px;
+    .title {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+      .heading {
+        h3 {
+          font-size: 1.8rem;
+          margin-bottom: 8px;
+        }
+        .add {
+          font: normal 1.4rem/1 "youtube";
+          color: map-get($map: $color, $key: sub);
+        }
+      }
+      .middle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .profile {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-weight: bold;
+          img {
+            width: 35px;
+            border-radius: 50%;
+          }
+          span {
+            font-size: 1.4rem;
+            font-weight: normal;
+            color: map-get($map: $color, $key: sub);
+          }
+        }
+        .middle_btn {
+          span {
+            @include btnType();
+          }
+        }
+      }
+      .subinfo {
+        display: flex;
+        justify-content: space-between;
+        span {
+          @include btnType();
+          font-size: 1.2rem;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
+      }
+      .review {
+        background: map-get($map: $color, $key: background);
+        padding: 12px;
+        border-radius: 10px;
+        .review_title {
+          margin-bottom: 10px;
+          span:last-child {
+            color: map-get($map: $color, $key: sub);
+            font-size: 1.4rem;
+          }
+        }
+        .review_content {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          img {
+            width: 30px;
+            border-radius: 50%;
+          }
+          p {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+    .hashlist {
+      position: sticky;
+      top: 268px;
+      width: 360px;
+      margin-left: -12px;
+      padding: 10px 0;
+      background: map-get($map: $color, $key: light);
+      opacity: 0;
+      overflow: hidden;
+      transition: all 1s;
+      // border: 1px solid #f00;
+      &.active {
+        opacity: 1;
+      }
+      .hashcontent {
+        width: 586px;
+        display: flex;
+        gap: 12px;
+        background: map-get($map: $color, $key: light);
+
+        // border: 1px solid #ccc;
+        li {
+          a {
+            display: inline-block;
+            background: map-get($map: $color, $key: background);
+            padding: 6px 10px;
+            font-size: 1.4rem;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+    .ad01 {
+      width: 100%;
+      background: map-get($map: $color, $key: light);
+      margin: 10px 0;
+      margin-top: -40px;
+      .adimg {
+        width: 100%;
+        height: 379px;
+        background: url("./imgs/ad01.jpg") center/cover no-repeat;
+      }
+      .adtitle {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        color: #1a76f5;
+        background: map-get($map: $color, $key: ad-sub);
+        padding: 14px 10px;
+      }
+      .adinfo {
+        display: flex;
+        gap: 16px;
+        padding: 14px 10px;
+        .fa-facebook {
+          font-size: 4rem;
+          color: map-get($map: $color, $key: ad);
+        }
+        .addesc {
+          width: 100%;
+          span {
+            display: block;
+            &:first-child {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+            &:nth-child(2) {
+              margin: 6px 0;
+              color: map-get($map: $color, $key: sub);
+            }
+            &:last-child {
+              font-size: 1.4rem;
+              color: map-get($map: $color, $key: sub);
+              b {
+                color: map-get($map: $color, $key: dark);
+              }
+            }
+          }
+        }
+      }
+    }
+    .contents {
+      background: map-get($map: $color, $key: light);
+      .content {
+        width: 100%;
+        background: map-get($map: $color, $key: light);
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

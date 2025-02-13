@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  h1 {
+    margin-bottom: 20px;
+  }
+  width: 550px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    label {
+      margin-right: 20px;
+      input[type="text"] {
+        width: 80px;
+        height: 30px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+    input[type="button"] {
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  }
+  #result {
+    width: 400px;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    p {
+      font-size: 20px;
+      line-height: 140%;
+      .accent {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+}

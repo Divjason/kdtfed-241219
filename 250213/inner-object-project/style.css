@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  width: 550px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#container h1 {
+  margin-bottom: 20px;
+}
+#container form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#container form label {
+  margin-right: 20px;
+}
+#container form label input[type=text] {
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+#container form input[type=button] {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+#container #result {
+  width: 400px;
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+#container #result p {
+  font-size: 20px;
+  line-height: 140%;
+}
+#container #result p .accent {
+  font-size: 18px;
+  font-weight: bold;
+}

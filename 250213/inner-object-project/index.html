@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="container">
+      <h1>내가 살아온 시간</h1>
+      <form name="mylist" action="#" method="post">
+        <label><input id="year" type="text" />년</label>
+        <label><input id="month" type="text" />월</label>
+        <label><input id="date" type="text" />일</label>
+        <input id="btn" type="button" value="계산" />
+      </form>
+
+      <div id="result">
+        <p id="current"></p>
+        <p id="days" class="accent"></p>
+        <p id="hours" class="accent"></p>
+        <p id="age" class="accent"></p>
+      </div>
+    </main>
+  </body>
+</html>
