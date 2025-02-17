@@ -1,0 +1,124 @@
+@import "./styles/reset.scss";
+@import "./styles/variable.scss";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  width: 540px;
+  height: 840px;
+  border: 1px solid map-get($map: $color, $key: border);
+  border-radius: 20px;
+  box-shadow: 7px 7px 40px rgba($color: #0068ff, $alpha: 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  h3 {
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: map-get($map: $color, $key: title);
+    width: 380px;
+  }
+  .error {
+    color: crimson;
+    height: 10px;
+    font-size: 1.2rem;
+  }
+  .inputBox {
+    width: 380px;
+    height: 60px;
+    margin-top: 20px;
+    padding: 18px;
+    background: map-get($map: $color, $key: light);
+    border: 1px solid map-get($map: $color, $key: input);
+    border-radius: 8px;
+    &::placeholder {
+      color: map-get($map: $color, $key: placeholder);
+      font-size: 1.6rem;
+    }
+  }
+  .phone-wrapper {
+    width: 380px;
+    height: 40px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .phoneNum {
+      width: 100px;
+      height: 40px;
+      border: 1px solid map-get($map: $color, $key: input);
+      border-radius: 8px;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  }
+  .token-wrapper {
+    width: 380px;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    .token,
+    .token-timer {
+      color: map-get($map: $color, $key: title);
+      font-size: 1.8rem;
+    }
+    #token-button,
+    #token-timer-confirm-button {
+      width: 120px;
+      height: 40px;
+      margin-left: 20px;
+      border: 1px solid map-get($map: $color, $key: input);
+      border-radius: 8px;
+      font-size: 1.6rem;
+    }
+  }
+  .location {
+    width: 380px;
+    height: 60px;
+    margin-top: 20px;
+    padding: 18px;
+    color: map-get($map: $color, $key: placeholder);
+    font-size: 1.6rem;
+    border: 1px solid map-get($map: $color, $key: input);
+    border-radius: 8px;
+  }
+  .gender-wrapper {
+    width: 380px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    .gender {
+      width: 70px;
+      text-align: center;
+    }
+  }
+  hr {
+    width: 380px;
+    margin: 30px 0 20px;
+    border: 1px solid map-get($map: $color, $key: input);
+    border-radius: 10px;
+  }
+  #signup-button {
+    width: 380px;
+    height: 75px;
+    border: 1px solid map-get($map: $color, $key: input);
+    border-radius: 8px;
+    font-size: 1.8rem;
+  }
+}

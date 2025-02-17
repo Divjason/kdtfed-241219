@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./script3.js"></script>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      input[type="email"] {
+        width: 250px;
+        height: 30px;
+        padding-left: 30px;
+        border: 1px solid #ccc;
+      }
+
+      input[type="button"] {
+        width: 50px;
+        height: 30px;
+        background: #eee;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="container">
+      <form id="userInput" name="emailList" action="#" method="post">
+        <label>
+          <input
+            name="userEmail"
+            id="userEmail"
+            type="email"
+            placeholder="이메일 주소를 입력하세요"
+          />
+        </label>
+        <input type="button" value="실행" />
+      </form>
+      <div id="result"></div>
+    </main>
+  </body>
+</html>
