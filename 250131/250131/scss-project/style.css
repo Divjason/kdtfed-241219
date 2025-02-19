@@ -54,6 +54,272 @@ body {
 }
 
 /* content-item */
+/* ==== about ==== */
+.about-inner {
+  height: 100%;
+  background: #0dace3 url("./images/line-drawing.png") right bottom no-repeat;
+}
+.about-inner .about-items {
+  width: 45%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 150px;
+  color: #fff;
+}
+.about-inner .about-items .item {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+.about-inner .about-items .item:hover h3 {
+  color: #000;
+}
+.about-inner .about-items .item:hover img {
+  filter: invert(0);
+}
+.about-inner .about-items .item img {
+  height: 100px;
+  filter: invert(1);
+  transition: all 0.5s;
+}
+.about-inner .about-items .item span h3 {
+  font-size: 2.8rem;
+  font-weight: 500;
+  letter-spacing: -1px;
+  transition: color 0.5s;
+}
+.about-inner .about-items .item span p {
+  font-size: 1.8rem;
+  margin-top: 5px;
+}
+
+/* ==== project === */
+.project-inner {
+  height: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+.project-inner input {
+  display: none;
+}
+.project-inner input[id=tab1]:checked ~ .tabs {
+  margin-left: 0;
+}
+.project-inner input[id=tab1]:checked ~ .btn label[for=tab1]::before {
+  border: 1px solid #bbb;
+}
+.project-inner input[id=tab2]:checked ~ .tabs {
+  margin-left: -100%;
+}
+.project-inner input[id=tab2]:checked ~ .btn label[for=tab2]::before {
+  border: 1px solid #bbb;
+}
+.project-inner input[id=tab3]:checked ~ .tabs {
+  margin-left: -200%;
+}
+.project-inner input[id=tab3]:checked ~ .btn label[for=tab3]::before {
+  border: 1px solid #bbb;
+}
+.project-inner .tabs {
+  width: 300%;
+  height: 100%;
+  transition: all 0.3s;
+}
+.project-inner .tabs .tab {
+  width: 33.3333%;
+  height: 100%;
+  float: left;
+  display: flex;
+}
+.project-inner .tabs .tab > div {
+  height: 100%;
+}
+.project-inner .tabs .tab > div.project-info {
+  width: 25%;
+}
+.project-inner .tabs .tab > div.project-photo {
+  width: 75%;
+  overflow: hidden;
+}
+.project-inner .tabs .tab .project-info {
+  padding: 50px;
+  position: relative;
+}
+.project-inner .tabs .tab .project-info h3 {
+  font-size: 2rem;
+  position: relative;
+  margin-bottom: 10px;
+}
+.project-inner .tabs .tab .project-info p {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+.project-inner .tabs .tab .project-info ul {
+  margin: 30px 0;
+  line-height: 2.4rem;
+}
+.project-inner .tabs .tab .project-info ul li::before {
+  content: "\f105";
+  font-family: fontawesome;
+  margin-right: 10px;
+}
+.project-inner .tabs .tab .project-info .detail {
+  margin-bottom: 50px;
+  display: flex;
+}
+.project-inner .tabs .tab .project-info .detail div {
+  text-align: center;
+  width: 33.33%;
+  color: #999;
+}
+.project-inner .tabs .tab .project-info .detail div span {
+  display: block;
+  font-weight: bold;
+  font-size: 2.6rem;
+  color: #000;
+  margin-bottom: 10px;
+}
+.project-inner .tabs .tab .project-info .view-project {
+  background: #000;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  padding: 10px 14px;
+  text-align: center;
+  display: inline-block;
+  width: 220px;
+}
+.project-inner .tabs .tab .project-info .view-project .fas {
+  transition: all 0.3s;
+}
+.project-inner .tabs .tab .project-info .view-project:hover .fas {
+  margin-left: 30px;
+}
+.project-inner .tabs .tab .project-info::before {
+  content: attr(data-text);
+  font-size: 10rem;
+  color: #eee;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+}
+.project-inner .tabs .tab .project-photo {
+  width: 75%;
+  overflow: hidden;
+}
+.project-inner .btn {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  width: 25%;
+  text-align: center;
+}
+.project-inner .btn label {
+  position: relative;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 8px;
+  background: #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.project-inner .btn label::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: -6px;
+  top: -6px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+.project-inner .btn label:hover::before {
+  border: 1px solid #bbb;
+}
+
+/* ==== plan === */
+.plan-inner {
+  background: #000;
+  height: 100%;
+}
+.plan-inner .plan-feature {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.plan-inner .plan-feature > div {
+  height: 300px;
+  color: #bbb;
+}
+.plan-inner .plan-feature .plan-info {
+  display: flex;
+  gap: 50px;
+}
+.plan-inner .plan-feature .plan-info .plan-heading {
+  width: 70%;
+}
+.plan-inner .plan-feature .plan-info .plan-heading h2 {
+  color: #fff;
+}
+.plan-inner .plan-feature .plan-info .plan-heading .bar {
+  width: 300px;
+  height: 2px;
+  border: none;
+  display: inline-block;
+  background: #0088cc;
+  margin: 10px 0;
+}
+.plan-inner .plan-feature .plan-info .plan-heading p {
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+.plan-inner .plan-feature .plan-info .plan-photo {
+  width: 30%;
+}
+.plan-inner .plan-feature .plan-info .plan-photo img {
+  height: 265px;
+}
+.plan-inner .plan-feature .history-info h2 {
+  color: #fff;
+}
+.plan-inner .plan-feature .history-info .bar {
+  width: 300px;
+  height: 2px;
+  border: none;
+  display: inline-block;
+  background: #0088cc;
+  margin: 10px 0;
+}
+.plan-inner .plan-feature .history-info .history-slider div h4 {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: normal;
+  line-height: 2.4rem;
+  margin-bottom: 10px;
+}
+.plan-inner .plan-feature .history-info .history-slider div h4 span {
+  color: #0088cc;
+}
+.plan-inner .plan-feature .history-info .history-slider div p {
+  font-size: 1.8rem;
+  width: 70%;
+}
+.plan-inner .plan-feature .history-info .history-slider .slick-dots li button:before {
+  color: #fff;
+  font-size: 2.4rem;
+}
+.plan-inner .plan-feature .history-info .history-slider .slick-arrow {
+  display: none !important;
+}
+
 /* ==== awards === */
 .awards-inner {
   display: flex;
@@ -113,4 +379,308 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+/* ==== location === */
+.location-inner {
+  height: 100%;
+  background: url("./images/background-location.jpg") center/cover no-repeat;
+  position: relative;
+}
+.location-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+.location-inner .feature {
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #bbb;
+  display: flex;
+  gap: 100px;
+}
+.location-inner .feature .office {
+  width: 60%;
+}
+.location-inner .feature .office b {
+  font-weight: normal;
+}
+.location-inner .feature .office h2 {
+  color: #1db1f0;
+  font-weight: 500;
+  margin-top: 5px;
+}
+.location-inner .feature .office p {
+  font-size: 1.6rem;
+  line-height: 2.3rem;
+}
+.location-inner .feature .office span {
+  color: #fff;
+  display: inline-block;
+  margin-top: 8px;
+}
+.location-inner .feature .office .customer {
+  margin-top: 40px;
+}
+.location-inner .feature .service {
+  width: 40%;
+}
+.location-inner .feature .service .service-item {
+  margin-bottom: 40px;
+}
+.location-inner .feature .service .service-item i {
+  color: #1db1f0;
+  font-size: 40px;
+}
+.location-inner .feature .service .service-item h3 {
+  color: #fff;
+  font-size: 2.4rem;
+  margin: 8px 0 4px;
+}
+
+/* ==== contact === */
+.contact-inner {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.contact-inner .contact-feature {
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+.contact-inner .contact-feature > div {
+  width: 50%;
+  padding: 20px;
+}
+.contact-inner .contact-feature .contact-form h3 {
+  font-size: 3rem;
+  font-weight: normal;
+  margin-bottom: 6px;
+}
+.contact-inner .contact-feature .contact-form .send-box label {
+  display: block;
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin: 30px 0 10px;
+}
+.contact-inner .contact-feature .contact-form .send-box label span {
+  font-weight: normal;
+  color: #dc143c;
+}
+.contact-inner .contact-feature .contact-form .send-box input,
+.contact-inner .contact-feature .contact-form .send-box textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 10px;
+  transition: all 0.3s;
+}
+.contact-inner .contact-feature .contact-form .send-box input:focus,
+.contact-inner .contact-feature .contact-form .send-box textarea:focus {
+  outline: none;
+  background: #eee;
+}
+.contact-inner .contact-feature .contact-form .send-box input:hover,
+.contact-inner .contact-feature .contact-form .send-box textarea:hover {
+  border: 1px solid #0088cc;
+  box-shadow: 0 0 5px #0088cc;
+}
+.contact-inner .contact-feature .contact-form .send-box input[type=submit] {
+  background: #0088cc;
+  color: #fff;
+  margin-top: 10px;
+  padding: 12px 20px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.contact-inner .contact-feature .contact-form .send-box input[type=submit]:hover {
+  background: #000;
+  border: 1px solid #000;
+  box-shadow: none;
+}
+.contact-inner .contact-feature .contact-info h4 {
+  font-weight: normal;
+  font-size: 2.6rem;
+  margin: 20px 0 10px;
+}
+.contact-inner .contact-feature .contact-info ul li {
+  line-height: 2.6rem;
+}
+.contact-inner .contact-feature .contact-info p {
+  line-height: 2.6rem;
+}
+
+/* ==== modal ==== */
+.modal {
+  font-family: "Source Sans 3";
+}
+.modal .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 3;
+}
+.modal .header .header-inner {
+  width: 95%;
+  margin: 0 auto;
+  height: 90px;
+  line-height: 90px;
+  border-bottom: 1px solid #ddd;
+}
+.modal .header .header-inner .modal-display {
+  font-size: 1.8rem;
+}
+.modal .hiring-main {
+  height: 600px;
+  position: relative;
+}
+.modal .hiring-main .hiring-heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+.modal .hiring-main .hiring-heading span {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2rem;
+  position: relative;
+}
+.modal .hiring-main .hiring-heading span::before, .modal .hiring-main .hiring-heading span::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+}
+.modal .hiring-main .hiring-heading span::before {
+  right: 120%;
+}
+.modal .hiring-main .hiring-heading span::after {
+  left: 120%;
+}
+.modal .hiring-main .hiring-heading h1 {
+  font-size: 6rem;
+  font-weight: lighter;
+  margin-top: 20px;
+}
+.modal .hiring-main.project-main1 {
+  background: url("./images/project-main-01-01.jpg") center/cover no-repeat;
+}
+.modal .hiring-info {
+  overflow: hidden;
+  margin-bottom: 30px;
+  display: flex;
+}
+.modal .hiring-info > div {
+  width: 50%;
+  height: 600px;
+}
+.modal .hiring-info > div.center-parent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .hiring-info > div.center-parent .center-child {
+  width: 70%;
+}
+.modal .hiring-info > div.center-parent .center-child h2 {
+  font-size: 3.6rem;
+  font-weight: normal;
+}
+.modal .hiring-info > div.center-parent .center-child p {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2.5rem;
+}
+.modal .hiring-info > div.photo img {
+  width: 100%;
+}
+.modal .hiring-info > div.photo.project-info {
+  font-size: 2rem;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .hiring-slogan {
+  padding: 100px 0;
+}
+.modal .hiring-slogan p {
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  position: relative;
+}
+.modal .hiring-slogan p::before {
+  content: ",,";
+  font-size: 30rem;
+  font-family: "Overpass";
+  color: #ddd;
+  transform: rotate(180deg);
+  position: absolute;
+  top: -140px;
+  left: -100px;
+}
+
+/* ==== feather light ==== */
+.featherlight .featherlight-content {
+  position: relative;
+  text-align: left;
+  vertical-align: middle;
+  display: inline-block;
+  overflow: auto;
+  padding: 0;
+  border-bottom: 25px solid transparent;
+  margin-left: 0%;
+  margin-right: 0%;
+  max-height: 100%;
+  background: #fff;
+  cursor: auto;
+  white-space: normal;
+  width: 100%;
+  height: 100%;
+}
+.featherlight .featherlight-content iframe {
+  width: 100%;
+  height: 100%;
+}
+.featherlight .featherlight-close-icon {
+  position: absolute;
+  z-index: 9999;
+  top: 30px;
+  right: 70px;
+  line-height: 25px;
+  width: 25px;
+  cursor: pointer;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.3);
+  color: #000;
+  border: none;
+  padding: 0;
+  font-size: 3rem;
 }
