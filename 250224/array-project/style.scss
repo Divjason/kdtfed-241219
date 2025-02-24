@@ -1,0 +1,97 @@
+@import "./styles/reset.scss";
+@import "./styles/variables.scss";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  .container {
+    form {
+      width: 800px;
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      .search {
+        position: absolute;
+        top: 44px;
+        right: 0;
+        input[type="text"] {
+          width: 200px;
+          font-size: 2rem;
+          border: none;
+          border-bottom: 1px solid map-get($map: $color, $key: border);
+          padding-left: 10px;
+          &::placeholder {
+            color: map-get($map: $color, $key: border);
+            opacity: 1;
+            transition: opacity 0.3s;
+          }
+          &:focus {
+            outline: none;
+            &::placeholder {
+              opacity: 0;
+            }
+          }
+        }
+        i {
+          position: absolute;
+          top: 0;
+          right: 8px;
+          color: map-get($map: $color, $key: border);
+          cursor: pointer;
+        }
+      }
+      .sort-buttons {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        input[type="button"] {
+          width: 100%;
+          padding: 12px;
+          cursor: pointer;
+        }
+      }
+      select {
+        width: 100%;
+        padding: 10px;
+        background: map-get($map: $color, $key: select-bg);
+        outline: none;
+      }
+    }
+    ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      li {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+        box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.5);
+        margin: 20px 0;
+        padding: 20px 0;
+        border-radius: 10px;
+        cursor: pointer;
+        img {
+          border-radius: 10px;
+          overflow: hidden;
+        }
+        div {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
