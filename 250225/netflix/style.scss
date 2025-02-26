@@ -1,2 +1,192 @@
 @import "./styles/reset.scss";
 @import "./styles/variables.scss";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 3000px;
+  font-size: 1.6rem;
+  background: map-get($map: $color, $key: dark);
+  color: map-get($map: $color, $key: light);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+
+  header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    background: map-get($map: $color, $key: dark);
+    nav {
+      width: 900px;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 2;
+      .logo {
+        img {
+          width: auto;
+          height: 30px;
+        }
+      }
+      .search-box {
+        i {
+          font-size: 1.8rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .menu-bg {
+    width: 100%;
+    height: 320px;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    max-height: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.4)
+    );
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    z-index: 1;
+  }
+
+  .gnb {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.4)
+    );
+    z-index: 1;
+    & > ul {
+      width: 900px;
+      padding: 0 10px;
+      display: flex;
+      justify-content: space-between;
+      & > li > a {
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        font-weight: bold;
+        position: relative;
+        margin-bottom: 10px;
+        padding-bottom: 2px;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0%;
+          height: 2px;
+          background: map-get($map: $color, $key: button);
+          transform-origin: center;
+          transform: translateX(-50%);
+          margin-left: 50%;
+          transition: width 0.3s;
+        }
+        &:hover {
+          color: map-get($map: $color, $key: button);
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+      .submenu {
+        width: 100px;
+        text-align: center;
+        position: absolute;
+        top: 40px;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.3s ease, max-height 0.3s ease;
+        & > li {
+          margin: 10px 0;
+          a {
+            &:hover {
+              color: map-get($map: $color, $key: button);
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mainSlider {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    figure {
+      width: 100%;
+      height: 800px;
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      &.active {
+        opacity: 1;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  .faq {
+    width: 100%;
+    height: 100%;
+    margin-top: 240px;
+    .faq-inner {
+      width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+      h1 {
+        text-align: center;
+        font-size: 3rem;
+      }
+      .accordion {
+        font-size: 1.6rem;
+        margin: 10px 0;
+        .title {
+          width: 100%;
+          font-weight: bold;
+          margin-bottom: 8px;
+          padding: 10px;
+          position: relative;
+          transition: all 0.3s;
+          cursor: pointer;
+          &::after {
+            content: "\2b";
+            font-family: "fontawesome";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s;
+          }
+        }
+      }
+    }
+  }
+}
