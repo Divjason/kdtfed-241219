@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./script04.js"></script>
+    <title>Subway</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #container {
+        text-align: center;
+        button {
+          width: 150px;
+          margin: 10px 0;
+          padding: 10px 20px;
+          cursor: pointer;
+        }
+        #result {
+          font-weight: bold;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="container">
+      <h1>경강선 노선</h1>
+      <button>다음 역</button>
+      <div id="result">출발!</div>
+    </main>
+  </body>
+</html>
