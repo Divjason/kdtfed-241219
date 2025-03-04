@@ -1,0 +1,17 @@
+SCSS 예제 완료
+
+JS 데이터 통신 + API
+
+리액트 기본 개념 + TS
+
+넷플릭스 예제
+- HTML, CSS, JS, Data통신 전반적인 예제
+
+데이터가 정상적으로 들어오지 못했을 때, 이때가 가장 난처하고 중요한 상황!!!
+
+https://reqres.in/api/products
+
+위 주소를 통해서 상품정보를 json으로 찾아와서
+브라우저에 상품명 / 생산년도 값을 출력해주세요!!!!
+
+jsonplaceholder

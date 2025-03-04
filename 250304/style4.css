@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .container h1 {
+  margin-bottom: 20px;
+}
+body .container #result div {
+  margin: 20px;
+}
+body .container #result div p {
+  font-size: 20px;
+}
