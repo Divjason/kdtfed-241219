@@ -151,11 +151,109 @@ body {
 }
 .container .movie {
   position: relative;
+  width: 100%;
+  height: 100%;
+}
+.container .movie article {
+  width: 900px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+}
+.container .movie article h1 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+.container .movie article ul {
+  display: flex;
+  gap: 25px;
+  transition: all 0.5s;
+}
+.container .movie article ul li {
+  cursor: pointer;
+}
+.container .movie article ul li .moviePoster {
+  width: 160px;
+  height: 234px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+.container .movie article ul li .moviePoster img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .movie article ul li .moviePoster span {
+  position: absolute;
+}
+.container .movie article ul li .moviePoster span:nth-of-type(1) {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  right: 10px;
+  background: rgba(220, 20, 60, 0.7);
+  text-align: center;
+  line-height: 40px;
+  border-radius: 8px;
+}
+.container .movie article ul li .moviePoster span:nth-of-type(2) {
+  left: 10px;
+  bottom: 10px;
+  font-size: 2.4rem;
+  font-style: italic;
+  text-shadow: 0 0 6px white;
+}
+.container .movie article ul li .movieTitle {
+  margin: 10px 0;
+  text-align: center;
+  font-size: 1.6rem;
+  width: 160px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.container .movie article ul li .movieDesc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1rem;
+}
+.container .movie article ul li .movieDesc span:nth-child(1) {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.container .movie article .arrowBtn {
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #dc143c;
+  transform: translateY(-50%);
+  transition: all 0.3s;
+}
+.container .movie article .arrowBtn#nowPlayingRightArrow, .container .movie article .arrowBtn#upcomingRightArrow, .container .movie article .arrowBtn#topRatedRightArrow {
+  right: 0;
+}
+.container .movie article .arrowBtn#nowPlayingLeftArrow, .container .movie article .arrowBtn#upcomingLeftArrow, .container .movie article .arrowBtn#topRatedLeftArrow {
+  left: 0;
+}
+.container .movie article .arrowBtn:hover {
+  background: #fff;
+  color: #dc143c;
 }
 .container .faq {
   width: 100%;
   height: 100%;
-  margin-top: 240px;
+  margin: 100px 0;
 }
 .container .faq .faq-inner {
   width: 900px;
@@ -204,7 +302,7 @@ body {
 .container .faq .faq-inner .newsletter {
   width: 100%;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 100px;
 }
 .container .faq .faq-inner .newsletter p {
   font-size: 2rem;
@@ -320,4 +418,150 @@ body {
   top: 20%;
   left: 8px;
   font-size: 1.6rem;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: auto;
+  padding: 100px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.modal-overlay .modal-content {
+  width: 1000px;
+  position: relative;
+  border: 1px solid #f00;
+}
+.modal-overlay .modal-content .modal-top {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.modal-overlay .modal-content .modal-top .modal-photo {
+  width: 300px;
+  height: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.modal-overlay .modal-content .modal-top .modal-photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.modal-overlay .modal-content .modal-top form {
+  width: 600px;
+}
+.modal-overlay .modal-content .modal-top form .modal-info {
+  width: 100%;
+}
+.modal-overlay .modal-content .modal-top form .modal-info h1 {
+  font-size: 4rem;
+  margin-bottom: 14px;
+}
+.modal-overlay .modal-content .modal-top form .modal-info div {
+  font-size: 1.6rem;
+}
+.modal-overlay .modal-content .modal-top form .modal-info div span {
+  display: inline-block;
+  margin-right: 4px;
+  padding-right: 10px;
+  border-right: 1px solid #fff;
+}
+.modal-overlay .modal-content .modal-top form .modal-info div span:last-child {
+  border-right: none;
+}
+.modal-overlay .modal-content .modal-top form .modal-button {
+  width: 100%;
+  margin: 20px 0;
+}
+.modal-overlay .modal-content .modal-top form .modal-button a {
+  display: inline-block;
+  width: auto;
+  border: 1px solid #fff;
+  border-radius: 34px;
+  margin-right: 8px;
+  padding: 8px 20px;
+  transition: border 0.3s, background 0.3s;
+}
+.modal-overlay .modal-content .modal-top form .modal-button a:hover {
+  border: 1px solid #dc143c;
+  background: #dc143c;
+}
+.modal-overlay .modal-content .modal-top form .modal-button a i {
+  margin-right: 10px;
+}
+.modal-overlay .modal-content .modal-top form .modal-desc {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.modal-overlay .modal-content .modal-top form .modal-desc p {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+.modal-overlay .modal-content .modal-top form input[type=submit] {
+  border: none;
+  border-radius: 34px;
+  background: #dc143c;
+  color: #fff;
+  padding: 8px 36px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modal-overlay .modal-content .modal-bottom .modal-detail {
+  width: 100%;
+  background: #dc143c;
+  padding: 10px;
+  border-radius: 20px 0 0 0;
+}
+.modal-overlay .modal-content .modal-bottom .modal-detail h1 {
+  font-size: 3rem;
+  margin-bottom: 14px;
+}
+.modal-overlay .modal-content .modal-bottom .modal-detail div {
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.modal-overlay .modal-content .modal-bottom .modal-detail div span:first-child {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-right: 12px;
+}
+.modal-overlay .modal-content .modal-bottom .modal-detail div span:last-child {
+  font-style: italic;
+  text-decoration: underline;
+}
+.modal-overlay .modal-content .modal-bottom .modal-poster {
+  width: 100%;
+  height: 500px;
+}
+.modal-overlay .modal-content .modal-bottom .modal-poster img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.modal-overlay .modal-content .modal-bottom .modal-trailer {
+  width: 100%;
+  height: 500px;
+  margin: 20px 0;
+  background: #fff;
+}
+.modal-overlay .modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.modal-overlay .modal-close i {
+  font-size: 3rem;
+  cursor: pointer;
+}
+.modal-overlay.active {
+  display: flex;
 }

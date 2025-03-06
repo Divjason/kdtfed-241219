@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+#result {
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 18px;
+  padding: 20px;
+}
+#result .quote {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+#result .author {
+  font-size: 1.8rem;
+  font-weight: 300;
+  font-style: italic;
+}
