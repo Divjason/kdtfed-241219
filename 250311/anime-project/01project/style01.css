@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+div.box1 {
+  background: blueviolet;
+}
+div.box2 {
+  background: lightgreen;
+}
+div.box3 {
+  background: lightcoral;
+}

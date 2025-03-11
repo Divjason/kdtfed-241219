@@ -94,6 +94,15 @@ const movieGeneres = async () => {
   return genres;
 };
 
+// Youtube DB
+const youtubeTrailers = async (movieId) => {
+  const url = `${tmdbCommand}/movie/${movieId}/videos?api_key=${API_KEY}&language=ko-KR`;
+  const response = await fetch(url);
+  const { results: trailers } = await response.json();
+  console.log(trailers);
+  return trailers;
+};
+
 // Promise DBs
 const getMovies = async () => {
   const [nowPlayingMovie, upComingMovie, topRatedMovie, generes] =
@@ -223,7 +232,7 @@ const getMovies = async () => {
   const movieModal = document.querySelector(".modal-overlay");
 
   movieItems.forEach((movieItem) => {
-    movieItem.addEventListener("click", () => {
+    movieItem.addEventListener("click", async () => {
       movieModal.innerHTML = "";
       movieModal.classList.add("active");
       const id = parseInt(movieItem.className);
@@ -364,6 +373,35 @@ const getMovies = async () => {
       modalclose.addEventListener("click", () => {
         movieModal.classList.remove("active");
       });
+
+      // Youtube Trailer
+      try {
+        const trailers = await youtubeTrailers(movie.id);
+        if (trailers.length > 0) {
+          const firstTrailer = trailers[0];
+          if (firstTrailer.site === "YouTube") {
+            const videoId = firstTrailer.key;
+            const youtubeUrl = `https://www.youtube.com/embed/${videoId}`;
+
+            const modalTrailer = modalContent.querySelector(".modal-trailer");
+            const iframe = document.createElement("iframe");
+            iframe.width = "1000";
+            iframe.height = "500";
+            iframe.src = youtubeUrl;
+            iframe.allowFullscreen = true;
+            // iframe.frameBorder = "0";
+            modalTrailer.innerHTML = "";
+            modalTrailer.appendChild(iframe);
+          }
+        } else {
+          console.log("해당 영화의 예고편이 존재하지 않습니다.");
+        }
+      } catch (error) {
+        console.error(
+          `영화 ID ${movie.id}의 예고편을 가져오지 못했습니다 : `,
+          error
+        );
+      }
     });
   });
 

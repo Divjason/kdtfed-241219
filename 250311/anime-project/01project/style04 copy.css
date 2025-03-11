@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: brown;
+}
+
+ul {
+  display: flex;
+  width: 400px;
+  flex-wrap: wrap;
+}
+ul li {
+  width: calc(11.1111111111% - 4px);
+  height: 30px;
+  background: cornsilk;
+  margin: 0 2px 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

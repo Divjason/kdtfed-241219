@@ -42,7 +42,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  z-index: 2;
+  z-index: 5;
 }
 .container header nav .logo img {
   width: auto;
@@ -338,7 +338,7 @@ body {
   position: fixed;
   top: -100%;
   left: 0;
-  z-index: 3;
+  z-index: 5;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   display: flex;
@@ -436,7 +436,6 @@ body {
 .modal-overlay .modal-content {
   width: 1000px;
   position: relative;
-  border: 1px solid #f00;
 }
 .modal-overlay .modal-content .modal-top {
   display: flex;
@@ -550,8 +549,10 @@ body {
 .modal-overlay .modal-content .modal-bottom .modal-trailer {
   width: 100%;
   height: 500px;
-  margin: 20px 0;
   background: #fff;
+}
+.modal-overlay .modal-content .modal-bottom .modal-trailer iframe {
+  border: none;
 }
 .modal-overlay .modal-close {
   position: absolute;

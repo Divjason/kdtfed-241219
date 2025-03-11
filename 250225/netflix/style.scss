@@ -28,7 +28,7 @@ body {
       justify-content: space-between;
       align-items: center;
       padding: 0 20px;
-      z-index: 2;
+      z-index: 5;
       .logo {
         img {
           width: auto;
@@ -346,7 +346,7 @@ body {
   position: fixed;
   top: -100%;
   left: 0;
-  z-index: 3;
+  z-index: 5;
   background: rgba($color: #000000, $alpha: 0.5);
   color: map-get($map: $color, $key: light);
   display: flex;
@@ -435,7 +435,6 @@ body {
   .modal-content {
     width: 1000px;
     position: relative;
-    border: 1px solid #f00;
     .modal-top {
       display: flex;
       gap: 20px;
@@ -550,8 +549,11 @@ body {
       .modal-trailer {
         width: 100%;
         height: 500px;
-        margin: 20px 0;
+        // margin: 20px 0;
         background: #fff;
+        iframe {
+          border: none;
+        }
       }
     }
   }
