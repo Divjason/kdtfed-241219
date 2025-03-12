@@ -1,0 +1,190 @@
+@import "./styles/reset.scss";
+@import "./styles/variables.scss";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  /* Toggle Menu */
+  #nav_icon {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 3;
+    div {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: map-get($map: $color, $key: light);
+        transition: all 0.3s ease-in-out;
+        &:nth-child(1) {
+          top: 0;
+        }
+        &:nth-child(2) {
+          top: 10px;
+        }
+        &:nth-child(3) {
+          top: 20px;
+        }
+      }
+    }
+  }
+  /* GNB */
+  nav {
+    position: fixed;
+    top: 32px;
+    right: 60px;
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+    transition: all 0.3s ease-in-out;
+    ul {
+      display: flex;
+      li {
+        margin-right: 20px;
+        a {
+          color: rgba($color: #ffffff, $alpha: 0.7);
+        }
+      }
+    }
+  }
+  &.nav_active {
+    & #nav_icon {
+      div {
+        span {
+          &:nth-child(1) {
+            top: 10px;
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+            transform: translateX(100%);
+          }
+          &:nth-child(3) {
+            top: 10px;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+    & nav {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
+}
+
+/* Fullpage Contents */
+#fullpage {
+  .section {
+    .inner {
+      width: 100%;
+      height: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      .title {
+        font-size: 3.8rem;
+        color: map-get($map: $color, $key: light);
+        transform: translateX(-100%);
+        transition: all 0.3s 1s ease-in-out;
+        opacity: 0;
+      }
+    }
+    &#sec0 {
+      background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+    }
+    &#sec1 {
+      background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    }
+    &#sec2 {
+      background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      .inner {
+        justify-content: space-around;
+        // .title {
+        //   transform: translateY(-100%) translateX(0);
+        // }
+        .slider_wrap {
+          width: 600px;
+          height: 400px;
+          background: map-get($map: $color, $key: gray);
+          position: relative;
+          transition: all 0.3s 0.5s ease-in-out;
+          .slide {
+            height: 100%;
+            .slide_inner {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 3rem;
+              color: map-get($map: $color, $key: light);
+            }
+            &.sl_01 {
+              background: #3a6cc2;
+            }
+            &.sl_02 {
+              background: #3cb395;
+            }
+            &.sl_03 {
+              background: #9246aa;
+            }
+            &.sl_04 {
+              background: #5cbd4b;
+            }
+          }
+          .fp-controlArrow {
+            &.fp-next {
+              right: -40px;
+              border-width: 19.5px 0 19.5px 18px;
+            }
+            &.fp-prev {
+              left: -40px;
+              border-width: 19.5px 18px 19.5px 0;
+            }
+          }
+        }
+      }
+      // &.active {
+      //   .inner {
+      //     // .title {
+      //     //   transform: translateY(0) translateX(0);
+      //     // }
+      //   }
+      // }
+    }
+    &#sec3 {
+      background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    }
+    &#sec4 {
+      background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
+    }
+    &.active {
+      .inner {
+        .title {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}
+
+.slider_wrap .fp-tableCell {
+  display: block;
+}
