@@ -1,0 +1,140 @@
+@use "sass:map";
+
+$color: (
+  light: #fff,
+  dark: #000,
+  border: #808080,
+  date: #1f93ff,
+);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.App {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.Header {
+  h1 {
+    color: map.get($map: $color, $key: date);
+    margin-top: 10px;
+  }
+}
+
+.TodoEditor {
+  .editor_wrapper {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    input[type="text"] {
+      flex: 1;
+      border: 1px solid map.get($map: $color, $key: border);
+      border-radius: 4px;
+      padding: 14px;
+      &::placeholder {
+        opacity: 1;
+        transition: all 0.3s;
+      }
+      &:focus {
+        outline: none;
+        border: 1px solid map.get($map: $color, $key: date);
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+    }
+    input[type="button"] {
+      width: 80px;
+      border: none;
+      border-radius: 4px;
+      background: map.get($map: $color, $key: date);
+      color: map.get($map: $color, $key: light);
+    }
+  }
+}
+
+.TodoList {
+  .searchbar {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid map.get($map: $color, $key: border);
+    margin: 10px 0 20px;
+    padding: 14px;
+    &::placeholder {
+      opacity: 1;
+      transition: all 0.3s;
+    }
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid map.get($color, date);
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+  .list_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.TodoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  border-bottom: 1px dashed map.get($map: $color, $key: border);
+  padding-bottom: 10px;
+  .checkbox_col {
+    width: 20px;
+    text-align: center;
+  }
+  .title_col {
+    flex: 1;
+    padding-bottom: 2px;
+  }
+  .date_col {
+    font-size: 1.4rem;
+    color: map.get($map: $color, $key: border);
+  }
+  .btn_col {
+    button {
+      border: none;
+      border-radius: 4px;
+      padding: 4px;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+  }
+}
