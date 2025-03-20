@@ -1,0 +1,23 @@
+npm create vite@lastest
+npm i
+cd 프로젝트명
+code .
+
+npm create vite@lastest
+npm i styled-components
+npm i styled-reset
+npm i react-router-dom
+
+1) 리액트 스타일 컴포넌트 설정 > reset
+
+2) 유틸리티 함수 선언
+
+3) 페이지 라우팅 선언
+
+http://localhost:5173/diary/1
+url Parameter = 매개변수
+Dynamic Parameter = 동적 파라미터
+
+http://localhost:5173/diary/1?key=value
+쿼리 스트링 => Query String
+
