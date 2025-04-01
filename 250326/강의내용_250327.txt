@@ -1,0 +1,119 @@
+1.TS : Node.js
+- node -v
+- npm -v
+- npm init // npm init -y
+
+2.npm i @types/node -g
+
+3.npm i typescript -g
+tsc -v
+npx tsc index.ts
+node index.js
+
+4.npm i tsx -g
+- 구 버전 : npm i ts-node
+- tsx -v
+- tsx index.ts
+- tsx src/index.ts
+
+* npm i undici-types
+
+—————
+
+TS 프로젝트 : ESM / CJS
+Ecmascript Module : 나중에 릴리즈 // 노드에서도 공식적으로 채택한 모듈
+Common JS Module : 노드가 탄생된 직후에는 자바스크립트의 표준 모듈을 어떻게 지정할지에 대한 기준 존재하지 않았음. 
+엄격하게 지정하고 있는 타입 : 부담 // 엄격
+
+5.tsc --init
+
+6.include : 컴파일링 하고자 하는 파일을 알아서 해당 폴더에서 찾아와서 컴파일을 할 수 있도록 설정하는 옵션
+- tsc
+
+7.target : 타입스크립트를 파일을 자바스크립트로 컴파일링을 하는데, 어떤 모듈 버전으로 컴파일링할지 결정해주는 옵션
+
+- CJS : require
+- ESM : import
+
+8.outDir : 컴파일링된 자바스크립트 파일을 어디에 출력할 것인지를 결정하는 옵션
+
+9.strict : 기본적인 타입선택의 엄격한 정도를 결정하고자 할 때 사용할 수 있는 옵션
+
+10.moduleDetection : 타입스크립트는 기본적으로 자바스크립트와 달리 현재 루트 폴더를 전역으로 인식!!!
+- export {}
+
+———————————
+
+1.타입스크립트 : 
+- 기본적으로 타입스크립트는 타입주석 (*Type Annotation)을 작성하도록 되어있지만, 생략을 했다고 해서 문제가 되지는 않는다.
+
+- 타입주석 = type annotation 
+
+- 타입추론 = type inference 
+
+- 리터럴타입 = litertal type
+
+- 자료형 : 원시타입
+- number / string / boolean / null / undefined
+
+- 자료형 : 배열
+
+- 유니온 타입 = Union Type
+
+- 튜플 타입 = Tuple
+
+2.참조타입 자료형 => 객체
+- 컴포넌트 기반 => Props => 객체
+
+- 객체 타입 정하기1 : object
+
+- 객체 타입 정하기2 : 객체 리터럴타입
+> 객체 사이즈에 따라 코드가 매우 길어질 수 있음
+> 유사한 형태의 객체가 나타나더라도 타입을 재활용할 수 없음!
+
+- 객체 타입 정하기3 : Interface
+> Optional Property = ? : 선택적 프로퍼티 // 속성
+> Readonly Property : 읽기전용 프로퍼티 // 속성
+> 애초에 객체형태를 띄고 있기 때문에 동일한 이름의 인터페이스 역시 사용가능!!! => 사용하지 않는 것을 추천!!!
+
+- 객체 타입 정하기4 : 타입별칭 = type alias = as
+> 동일한 scope안에서 동명의 타입별칭을 사용할 수 없음
+> 동일하지 않은 scope라고만 한다면, 동명의 타입별칭 사용가능!!!
+> 객체 타입을 보다 유연하게 사용하고자 할 때, 사용하면 보다 효율적임!!!
+
+> Type Signature = 타입시그니처
+
+> Enum = 열거형 타입 // 어떤 타입을 정의 및 지정하면서 동시에 카운트가 될 수 있도록 정의할 수 있음
+
+———————————
+
+number / string / boolean / null / undefined / array / tuple / type as / interface
+
+하나의 독립적인 타입을 일종의 집합체라고 부름!!!!
+타입 계층구조
+
+super type <-> sub type
+upcasting // down casting
+
+————————————
+void : 아무런 값도 반환하지 않는 타입
+
+never : 반환이 아예 불가능한 타입
+
+————————————
+타입의 호환성을 비교하는 대수타입!!!!
+
+————————————
+객체 타입에 대한 호환성 => 객체간 대수타입 비교
+
+객체 타입에서 대수타입을 비교할 때에는 객체 안에 있는 프로퍼티 (*속성)를 기준으로 슈퍼 및 서브타입을 구분합니다!!! => 값을 많이 가지고 있을 수록 서브타입 // 값이 상대적으로 적을수록 슈퍼타입
+
+객체의 초과 프로퍼티(속성) 검사 : 오류
+> 객체 타입의 대수타입을 활용해서 해당 오류를 벗어나는 경우!!!!
+
+
+
+
+
+
+
