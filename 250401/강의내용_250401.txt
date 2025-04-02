@@ -1,0 +1,88 @@
+npm init -y
+npm i @types/node
+npm i typescript
+npm i tsx
+npm i undici-types
+
+tsc --init
+
+*제네릭함수
+
+*제네릭타입별칭
+
+*제네릭인터페이스
+
+*제네릭클래스
+
+——————————————
+indexed access 타입
+
+keyof 연산자 + typeof 연산자
+> keyof : 타입에만 부착가능
+> typeof : 변수에만 부착가능 
+
+Mapped 타입
+
+Template Literal 타입
+
+———————————————
+
+조건부 타입
+> extends // 삼항조건 연산자
+
+분산적 조건부 타입
+
+Exclude 조건부 타입
+
+*유틸리티 타입
+- Readonly
+- Partial
+- Required
+- Pick
+- Omit
+- Exclude
+
+타입스크립트의 모든 타입을 다 사용해본 적이 없음!!!
+> 제가 주로 사용하는 타입
+> 원시타입 // 함수타입 // 객체타입 // 제네릭 타입
+> 타입가드 // 타입단언 // 인덱스드 엑세스 // 호출시그니처 등등 
+
+
+
+npm create vite@latest
+npm i
+
+npm i styled-components
+npm i @types/styled-components -D
+
+npm i react-router-dom
+npm i @types/react-router-dom -D
+
+npm i styled-reset
+
+GlobalStyles.styles.tsx
+
+*자바스크립트 기반, 리액트에서도 동일하게 구현가능한 기능!!!
+**타입스크립트 기반, 리액트 구현 => 특정 컬러 테마값을 설정해놓고, 해당 테마값을 가져다가 사용하는 방법을 알려주고 싶었음!!!
+
+1) 작업하는 환경이 타입스크립트!!!
+> 객체, 함수, 배열 => 타입 기반!!!
+
+2) 테마 컬러를 정의하려고 함!!!
+> 테마 컬러의 자료형태 => 객체임!!!
+
+3) 스타일컴퍼넌트는 개발자인 내가 어떤 타입의 테마 컬러를 정의하려고 하는지 알 수 없음!!!
+
+4) styled.d.ts => 타입정의!!!!
+> 내가 만들고자 하는 테마 컬러의 타입을 정의하는 공간!!!!
+
+5) 위에서 정의한 타입을 적용 & 실제 사용할 컬러 정의!!!
+> theme.ts
+
+6) 전역에서 위에서 정의한 테마 컬러를 사용할 수 있게 하기 위해서 
+ThemeProvider // Theme 
+
+
+
+
+
